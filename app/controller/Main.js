@@ -452,7 +452,7 @@ Ext.define('Touch2Demo.controller.Main', {
 		    var verRecord = verStore.getById(1);
 		    if (verRecord == null) {
 			var salvarCodFunc = Ext.create('Touch2Demo.model.usuarioLogado_m', {
-			    codFunc: codFunc
+			    codFunc: 'teste'
 			});
 			var salvarCodFunci = Ext.create('Touch2Demo.store.usuarioLogado_s');
 			salvarCodFunci.add(salvarCodFunc);
@@ -467,7 +467,7 @@ Ext.define('Touch2Demo.controller.Main', {
 		    } else {
 			var store44 = Ext.create('Touch2Demo.store.usuarioLogado_s');
 			var codUsuario = store44.data.get(1);
-			codUsuario.set('codFunc', codFunc);
+			codUsuario.set('codFunc', 'teste2');
 			Ext.Msg.alert('login', 'Logado com sucesso',
 				function (btn) {
 				    if (btn == 'ok') {
