@@ -235,7 +235,7 @@ Ext.define('Touch2Demo.controller.Main', {
 	    });
 	});
 	Ext.Msg.confirm(
-		'Sincronização',
+		'SincronizaÃ§Ã£o',
 		'Deseja sincronizar os contatos?',
 		function (btn) {
 		    if (btn == 'yes') {
@@ -448,22 +448,7 @@ Ext.define('Touch2Demo.controller.Main', {
 		);
     },
     logar: function(){
-	var form = this.getLoginForm(),
-		coleta = Ext.create('Touch2Demo.model.Contato', form.getValues()),
-		login = coleta.data.login,
-		senha = coleta.data.senha;	
-	var store55 = Ext.getStore('Contatos');
-
-	var f = 0;
-	store55.each(function () {
-	    var arquivo3 = store55.data.get(f);
-	    var loginSalvo = arquivo3.data.login;
-	    //  if (login = loginSalvo) {
-	    if (login == loginSalvo) {
-		var senhaSalva = arquivo3.data.senha;
-		codFunc = arquivo3.data.cod_cli;
-		if (senhaSalva == senha) {
-		    var verStore = Ext.create('Touch2Demo.store.usuarioLogado_s');
+	var verStore = Ext.create('Touch2Demo.store.usuarioLogado_s');
 		    var verRecord = verStore.getById(1);
 		    if (verRecord == null) {
 			var salvarCodFunc = Ext.create('Touch2Demo.model.usuarioLogado_m', {
@@ -492,13 +477,6 @@ Ext.define('Touch2Demo.controller.Main', {
 				this
 				);
 		    }
-		} else {
-		    Ext.Msg.alert('login', 'senha incorreta', Ext.emptyFn);
-		}
-	    } else {
-	    }
-	    f++;
-	});
 	
     }
 });
